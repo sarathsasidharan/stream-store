@@ -10,6 +10,9 @@ import org.w3c.dom.Element;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+import com.sun.tools.classfile.Attribute;
+
 import java.io.StringWriter;
 
 /**
@@ -18,7 +21,7 @@ import java.io.StringWriter;
  */
 public class CreateXml {
 
-   public String createXml(){
+   public String createXml(int i){
    
       String xmlString="";
       try {
@@ -26,16 +29,22 @@ public class CreateXml {
          DocumentBuilderFactory.newInstance();
          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
          Document doc = dBuilder.newDocument();
+
          
          // root element
          Element rootElement = doc.createElement("mortgage");
+        // rootElement.setNodeValue(Integer.toString(i));
          doc.appendChild(rootElement);
+
+         Attr attribute = doc.createAttribute("id");
+         attribute.setValue(Integer.toString(i));
+         rootElement.setAttributeNode(attribute);
 
          // home element
          Element home = doc.createElement("home");
          rootElement.appendChild(home);
 
-         // setting attribute to element
+                 // setting attribute to element
          Attr attr = doc.createAttribute("type");
          attr.setValue("RowHouse");
          home.setAttributeNode(attr);

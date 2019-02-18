@@ -28,8 +28,9 @@ public class TestDataReporter implements Runnable {
             System.out.println("Test Data #" + i + " from thread #" + Thread.currentThread().getId());
             //Create Xml to send for Distribution 
             CreateXml xml = new CreateXml();
-            msg=xml.createXml();
+            msg=xml.createXml(i);
             final ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(TOPIC, time, msg);
+            System.out.println(msg);
             producer.send(record, new Callback() {
                 public void onCompletion(RecordMetadata metadata, Exception exception) {
                     if (exception != null) {
