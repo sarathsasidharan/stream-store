@@ -18,14 +18,15 @@ public class BEBConsumerGeneric {
     public static void main(String[] args) {
         // BebClient initialization
         BebClientConfig clientConfig = BebClientConfig.builder()
-                .setConfigurationProviderUrl("distributioneh.servicebus.windows.net:9093")
+                .setConfigurationProviderUrl("https://distributioneh.servicebus.windows.net:9093")
+               // .set
                 .setApplicationId("io.axual.test")
                 .setApplicationVersion("3.0.0-SNAPSHOT")
                 .setEnvironmentSuffix("")
-                .setSslKeyPassword("notsecret")
-                //.setSslKeystoreLocation("beb.client.keystore.jks")
-                //.setSslKeystorePassword("notsecret")
-                //.setSslTruststoreLocation("beb.client.truststore.jks")
+               // .setSslKeyPassword("notsecret")
+                .setSslKeystoreLocation("C:\\Users\\sasasid\\Documents\\rabo-poc\\stream-store\\src\\main\\java\\beb.client.keystore.jks")
+                .setSslKeystorePassword("notsecret")
+                .setSslTruststoreLocation("C:\\Users\\sasasid\\Documents\\rabo-poc\\stream-store\\src\\main\\java\\beb.client.truststore.jks")
                 .setSslKeyPassword("Endpoint=sb://distributioneh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Cf5HUD43dQ4vcaF5GbJsZih+epbxCJKiOTYrKZ0cq0E=")
                 .setSslTruststorePassword("notsecret")
                 .build();
