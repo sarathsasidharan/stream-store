@@ -17,8 +17,12 @@ public class BEBConsumerGeneric {
 
     public static void main(String[] args) {
         // BebClient initialization
+        String bebMock        = "https://distributionloadercs.azurewebsites.net/api/HttpTrigger-Java?code=WVcq7J2VFcPr/alfN8A1z55d9c36HT3i8ixHC4NY7PyUJ7OH3WLdsA==&name=kakfa";
+        String bebMockLocal   = "http://localhost:7071/api/HttpTrigger-Java?name=sarath";
+        String sslKeyPassword = "Endpoint=sb://distributioneh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Cf5HUD43dQ4vcaF5GbJsZih+epbxCJKiOTYrKZ0cq0E=";
+
         BebClientConfig clientConfig = BebClientConfig.builder()
-                .setConfigurationProviderUrl("https://distributioneh.servicebus.windows.net:9093")
+                .setConfigurationProviderUrl(bebMockLocal)
                // .set
                 .setApplicationId("io.axual.test")
                 .setApplicationVersion("3.0.0-SNAPSHOT")
@@ -27,7 +31,7 @@ public class BEBConsumerGeneric {
                 .setSslKeystoreLocation("C:\\Users\\sasasid\\Documents\\rabo-poc\\stream-store\\src\\main\\java\\beb.client.keystore.jks")
                 .setSslKeystorePassword("notsecret")
                 .setSslTruststoreLocation("C:\\Users\\sasasid\\Documents\\rabo-poc\\stream-store\\src\\main\\java\\beb.client.truststore.jks")
-                .setSslKeyPassword("Endpoint=sb://distributioneh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Cf5HUD43dQ4vcaF5GbJsZih+epbxCJKiOTYrKZ0cq0E=")
+                .setSslKeyPassword(sslKeyPassword)
                 .setSslTruststorePassword("notsecret")
                 .build();
 
