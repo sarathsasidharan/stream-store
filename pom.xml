@@ -49,6 +49,16 @@
       <version>4.2.2</version>
     </dependency>
     <dependency>
+      <groupId>io.axual</groupId>
+      <artifactId>business-event-bus-serde</artifactId>
+      <version>4.2.2</version>
+    </dependency>
+        <dependency>
+      <groupId>io.axual</groupId>
+      <artifactId>business-event-bus-serde-core</artifactId>
+      <version>4.2.2</version>
+    </dependency>
+    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
       <version>2.9.8</version>
@@ -68,6 +78,22 @@
       <artifactId>kafka-schema-registry</artifactId>
       <version>3.3.3</version>
     </dependency>
+    <dependency>
+      <groupId>io.confluent</groupId>
+      <artifactId>kafka-avro-serializer</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+            <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-maven-plugin</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+          <groupId>com.twitter</groupId>
+          <artifactId>bijection-avro_2.10</artifactId>
+          <version>0.9.2</version>
+        </dependency>
+
     <!--v1.1-->
     <!-- <dependency>
       <groupId>org.apache.kafka</groupId>

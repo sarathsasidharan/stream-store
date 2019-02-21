@@ -3,8 +3,6 @@ package eventhub.consumer;
 import org.apache.avro.generic.GenericRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
 import io.axual.beb.client.BebClient;
 import io.axual.beb.client.BebClientConfig;
 import io.axual.beb.client.general.config.GenericConsumerConfig;
@@ -39,7 +37,7 @@ public class BEBConsumerGeneric {
 
             GenericConsumerConfig genericConsumerConfig = GenericConsumerConfig.builder()
                     .setConsumerStrategy(ConsumerStrategy.AT_LEAST_ONCE)
-                    .setTopic("general-applicationlog")
+                    .setTopic("distribution-customerlogin")
                     .build();
 
             // Create a processor
